@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>att7</title>
+</head>
+<body>
+    <script>
+//         Pedido de Restaurante
+// Crie um objeto contendo o nome do cliente, o valor da refeição e a porcentagem da taxa de serviço.
+// Adicione métodos para solicitar os dados, calcular a taxa,calcular o valor total e exibir o resumo do pedido.
+    var restaurante = {
+        nome: "",
+        valor: 0,
+        taxaServico: 0,
+
+        solicitarDados(){
+            this.nome = prompt("Digite o seu nome: ")
+            this.valor = Number(prompt("Digite o valor da refeição: "))
+            this.taxaServico = Number(prompt("Digite a porcentagem da taxa de serviço: "))
+        },
+
+        taxa(){
+           return this.valor * (this.taxaServico / 100)
+        },
+
+        calcularTotal(){
+           return this.valor + this.taxaServico
+        },
+
+        exibirResumo(){
+            var taxa = this.taxaServico
+            var total  = this.calcularTotal()
+
+            alert("Resumo do pedido: " + "Cliente: " + this.nome + "Valor da Refeição: " + this.valor + "Taxa de serviço: " + this.taxaServico + "Valor total: " + total )
+        },
+    }
+
+    restaurante.solicitarDados()
+    restaurante.exibirResumo()
+
+    </script>
+    
+</body>
+</html>

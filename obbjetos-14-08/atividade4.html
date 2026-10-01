@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>att4</title>
+</head>
+<body>
+    <script>
+        
+// 4. Pessoa
+// Crie um objeto contendo nome, ano de nascimento e ano atual. 
+// Adicione métodos para solicitar os dados, calcular a idade e informar se a pessoa é maior ou menor de idade.
+
+    var pessoa = {
+        nome: "",
+        nascimento: 0,
+        ano_atual: 2026,
+        
+        solicitarDados(){
+            this.nome = prompt("Digite o seu nome: ")
+            this.nascimento = Number(prompt("Digite o seu ano de nascimento: "))
+        },
+
+        calcular(){
+            var idade = this.ano_atual - this.nascimento
+            if (idade >= 18){
+                alert("A sua idade é: " + idade + "e você é maior de idade")
+            } else {
+                alert("A sua idade é: " + idade + "e você é menor de idade")
+            }
+        }    
+    }
+
+    pessoa.solicitarDados()
+    pessoa.calcular()
+    
+    </script>
+    
+</body>
+</html>

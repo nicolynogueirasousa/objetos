@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 15</title>
+    <script>
+        var sistemaVotacao = {
+            candidatos: [
+                { nome: "Candidato A", votos: 0 },
+                { nome: "Candidato B", votos: 0 }
+            ],
+            eleitoresVotantes: [],
+
+            cadastrarCandidato() {
+                var nome = prompt("Nome do novo candidato:")
+                this.candidatos.push({ nome: nome, votos: 0 })
+                alert("Candidato " + nome + " cadastrado com sucesso!")
+            },
+
+            votar() {
+                var documento = prompt("Informe seu documento/CPF:")
+
+                // Verifica se o documento já votou comparando com as posições da lista
+                if (this.eleitoresVotantes[0] == documento || this.eleitoresVotantes[1] == documento) {
+                    alert("Voto recusado! Este documento já registrou um voto.")
+                    return
+                }
+
+                var nomeBusca = prompt("Digite o nome do candidato:")
+
+                if (this.candidatos[0].nome == nomeBusca) {
+                    this.candidatos[0].votos = this.candidatos[0].votos + 1
+                    this.eleitoresVotantes.push(documento)
+                    alert("Voto registrado com sucesso no Candidato A!")
+                } else if (this.candidatos[1].nome == nomeBusca) {
+                    this.candidatos[1].votos = this.candidatos[1].votos + 1
+                    this.eleitoresVotantes.push(documento)
+                    alert("Voto registrado com sucesso no Candidato B!")
+                } else {
+                    alert("Candidato não encontrado!")
+                }
+            },
+
+            mostrarResultadoParcial() {
+                alert(
+                    "RESULTADO PARCIAL\n" +
+                    this.candidatos[0].nome + ": " + this.candidatos[0].votos + " voto(s)\n" +
+                    this.candidatos[1].nome + ": " + this.candidatos[1].votos + " voto(s)"
+                );
+            },
+
+            informarVencedor() {
+                var cand1 = this.candidatos[0]
+                var cand2 = this.candidatos[1]
+
+                if (cand1.votos > cand2.votos) {
+                    alert("🏆 Vencedor da eleição: " + cand1.nome + " com " + cand1.votos + " voto(s)!")
+                } else if (cand2.votos > cand1.votos) {
+                    alert("🏆 Vencedor da eleição: " + cand2.nome + " com " + cand2.votos + " voto(s)!")
+                } else {
+                    alert("A eleição terminou empatada!");
+                }
+            }
+        };
+
+        // Execução para teste:
+        sistemaVotacao.votar()
+        sistemaVotacao.votar() // Teste de verificação de voto duplicado
+        sistemaVotacao.mostrarResultadoParcial()
+        sistemaVotacao.informarVencedor()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

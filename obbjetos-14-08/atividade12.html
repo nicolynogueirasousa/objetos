@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 12</title>
+    <script>
+        // Crie um objeto que represente um perfil de uma rede social. 
+        // Ele deve possuir nome de usuário, lista de seguidores, lista de publicações e 
+        // quantidade total de curtidas. Crie métodos para publicar, excluir uma publicação, 
+        // seguir uma pessoa, deixar de seguir e curtir uma publicação. 
+        // O programa deve mostrar qual publicação possui mais curtidas.
+
+        var redeSocial = {
+            usuario: "maria_dev",
+            seguidores: ["ana", "carlos"],
+            publicacoes: ["Primeiro post", "Estudando JS"],
+            curtidas: [5, 12],
+
+            publicar(){
+                var texto = prompt("Digite a nova publicação:")
+                this.publicacoes.push(texto)
+                this.curtidas.push(0)
+                alert("Publicado com sucesso!")
+            },
+
+            excluirPublicacao(){
+                this.publicacoes.pop()
+                this.curtidas.pop()
+                alert("Última publicação removida!")
+            },
+
+            seguir(){
+                var nome = prompt("Digite o nome da pessoa para seguir:")
+                this.seguidores.push(nome)
+                alert("Você começou a seguir " + nome)
+            },
+
+            deixarDeSeguir(){
+                this.seguidores.pop()
+                alert("Você deixou de seguir o último usuário adicionado!")
+            },
+
+            curtir(){
+                this.curtidas[0] = this.curtidas[0] + 1
+                alert("Você curtiu o primeiro post! Total de curtidas dele: " + this.curtidas[0])
+            },
+
+            mostrarMaisCurtida(){
+                if(this.curtidas[0] >= this.curtidas[1]){
+                    alert("Post mais curtido: \"" + this.publicacoes[0] + "\" com " + this.curtidas[0] + " curtidas.")
+                } else {
+                    alert("Post mais curtido: \"" + this.publicacoes[1] + "\" com " + this.curtidas[1] + " curtidas.")
+                }
+            }
+        }
+
+        redeSocial.publicar()
+        redeSocial.curtir()
+        redeSocial.seguir()
+        redeSocial.mostrarMaisCurtida()
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

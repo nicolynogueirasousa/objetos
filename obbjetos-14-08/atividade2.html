@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>att2</title>
+</head>
+<body>
+    <script>
+//         2. Produto
+// Crie um objeto que represente um produto, contendo nome, preço e quantidade. 
+// Adicione métodos para solicitar os dados, calcular o valor total da compra e exibir um resumo.
+
+    var produto = {
+        nome: "",
+        preco: 0,
+        quantidade: 0,
+
+        solicitaDados(){
+            this.nome = prompt("Digite o nome do produto: ")
+            this.preco = Number(prompt("Digite o preço: "))
+            this.quantidade = Number(prompt("Digite a quantidade: "))  
+        },
+
+        calculo(){
+            var valor = this.preco * this.quantidade 
+            alert("Produto: "  + this.nome + "Valor: " + this.preco + "Quantidade: " + this.quantidade + "Valor total: " + valor )
+   
+
+        }
+    }
+
+    produto.solicitaDados()
+    produto.calculo()
+   
+
+    </script>
+    
+</body>
+</html>

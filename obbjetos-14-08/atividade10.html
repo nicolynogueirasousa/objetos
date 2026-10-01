@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>att 10</title>
+</head>
+<body>
+    <script>
+        
+// 10. Filme
+// Crie um objeto contendo título, duração em minutos e classificação indicativa.
+//  Adicione métodos para solicitar os dados, converter a duração para horas e minutos e
+//   verificar se uma pessoa pode assistir ao filme com base em sua idade.
+
+    var filme = {
+        titulo: "",
+        duracaoMinuto: 0,
+        classificacaoIndicativa: 0,
+
+        solicitarDados(){
+            this.titulo = prompt("Digite o título do filme: ")
+            this.duracaoMinuto = Number(prompt("Digite a duração do filme em minutos: "))
+            this.classificacaoIndicativa = Number(prompt("Digite a classificação indicativa do filme: "))
+        },
+
+        converter(){
+            var horas = (this.duracaoMinuto - (this.duracaoMinuto % 60)) / 60
+            var minutos = this.duracaoMinuto % 60
+            return horas + "H" + minutos + "Min"
+        },
+
+        verificar(){
+            var nome = Number(prompt("Digite a idade: "))
+            var duracaoFormatada = this.converter()
+            if(idade >= this.classificacaoIndicativa){
+                alert("Acesso permitido!" + "Filme: " + this.titulo + "Duração: " + this.duracaoMinuto + "Sua Idade:" + idade)
+            } else {
+                alert("Acesso Negado!" + "Filme:" + this.titulo + idade + "é menor que a idade permitida")
+            }
+        } 
+    }
+
+    filmes.solicitarDados()
+    filmes.verificar()
+    </script>
+    
+</body>
+</html>

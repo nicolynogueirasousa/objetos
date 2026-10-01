@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 11</title>
+    <script>
+        // Crie um objeto contendo o nome de um produto, preço, quantidade e 
+        // porcentagem de desconto. Adicione métodos para solicitar os dados, 
+        // calcular o subtotal, aplicar o desconto e exibir o valor final da compra.
+        
+        var carrinho = {
+            nomeProduto: "",
+            preco: 0,
+            quantidade: 0,
+            desconto: 0,
+
+            solicitarDados(){
+                this.nomeProduto = prompt("Informe o nome do produto: ")
+                this.preco = Number(prompt("Informe o preço unitário (R$): "))
+                this.quantidade = Number(prompt("Informe a quantidade: "))
+                this.desconto = Number(prompt("Informe a porcentagem de desconto (%): "))
+            },
+
+            calcularSubtotal(){
+                return this.preco * this.quantidade
+            },
+
+            calcularDesconto(){
+                return this.calcularSubtotal() * (this.desconto / 100)
+            },
+
+            exibirValorFinal(){
+                var subtotal = this.calcularSubtotal()
+                var valorDesconto = this.calcularDesconto()
+                var valorFinal = subtotal - valorDesconto
+
+                alert(
+                    "RESUMO DA COMPRA\n" +
+                    "Produto: " + this.nomeProduto + "\n" +
+                    "Subtotal: R$ " + subtotal + "\n" +
+                    "Desconto: R$ " + valorDesconto + "\n" +
+                    "Valor Final: R$ " + valorFinal
+                )
+            }
+        }
+
+        carrinho.solicitarDados()
+        carrinho.exibirValorFinal()
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

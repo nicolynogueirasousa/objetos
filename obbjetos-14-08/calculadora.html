@@ -1,0 +1,89 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULADORA</title>
+    <script>
+        var calculadora = {
+            numero1:0,
+            numero2: 0,
+            historico : [],
+            solicitarValores(){
+                // solicitar 2 números
+                this.numero1 = Number(prompt("Informe o número 1: "))
+                this.numero2 = Number(prompt("Informe o número 2: "))
+            },
+            somar(){
+            // exibir a soma dos 2 números
+                resultado = this.numero1 + this.numero2
+                this.historico.push({
+                    numero1 : this.numero1,
+                    numero2 : this.numero2,
+                    equacao : "+",
+                    resultado: resultado
+                })
+                alert("O resultado da soma é: " + resultado)
+            },
+            subtrair(){
+                // exibir a subtração dos 2 números
+                resultado = this.numero1 - this.numero2
+                this.historico.push({
+                    numero1 : this.numero1,
+                    numero2 : this.numero2,
+                    equacao : "-",
+                    resultado: resultado
+                })
+                alert("O resultado da subtração é: " + resultado)
+            },
+            multplicar(){
+                // exibir a multplicação dos 2 números
+                resultado = this.numero1 * this.numero2
+                this.historico.push({
+                    numero1 : this.numero1,
+                    numero2 : this.numero2,
+                    equacao : "*",
+                    resultado: resultado
+                })
+                alert("O resultado da multplicação é: " + resultado)
+
+            },
+            dividir(){
+                if(this.numero1 <= 0 || this.numero2 <= 0 ){
+                    alert("Não é possivel fazer divisão com zero")
+                }
+                else{
+                    resultado = this.numero1 / this.numero2
+                    this.historico.push({
+                    numero1 : this.numero1,
+                    numero2 : this.numero2,
+                    equacao : "/",
+                    resultado: resultado
+                })
+                alert("O resultado da divisão é: " + resultado)
+                }
+                // exibir a divisão dos 2 números
+                // não deve dividir por zero
+
+            },
+            exibirHistorico(){
+                // Exibir historico de todos os calculos feito antes
+                this.historico.forEach(function(item){
+                    alert("Resultados Anteriores: " + item.numero1 + " " +  item.equacao + " " + item.numero2 + "=" + item.resultado)
+                })
+
+            }
+        }
+
+        calculadora.solicitarValores()
+        calculadora.somar()
+        calculadora.subtrair()
+        calculadora.multplicar()
+        calculadora.dividir()
+        calculadora.exibirHistorico()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

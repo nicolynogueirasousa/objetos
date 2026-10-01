@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>att 6</title>
+</head>
+<body>
+    <script>
+        
+// 6. Veículo
+// Crie um objeto contendo modelo, quantidade de combustível e consumo por quilômetro.
+//  Adicione métodos para abastecer, dirigir determinada distância e consultar a quantidade de combustível.
+//   O veículo não pode percorrer uma distância quando não houver combustível suficiente.
+
+    var veiculo = {
+        modelo: "",
+        qtdCombustivel: 0,
+        consumo: 0,
+
+        solicitarDados(){
+            this.modelo = prompt("Digite o nome do seu modelo: ")
+            this.qtdCombustivel  = Number(prompt("Digite a quantidade de combustivel: "))
+            this.consumo = Number(prompt("Digite o consumo por Km: "))
+        },
+
+        abastecer(){
+            var abastecer = Number(prompt("Digite a quantidade que deseja abastecer: "))
+            this.qtdCombustivel = this.qtdCombustivel + abastecer
+            alert("Carro abastecido com: " + abastecer + "Combustivel atual: " + qtdCombustivel )
+        },
+
+        dirigir(){
+            var qtdKm = Number(prompt("Digite a distância que será percorrida: (KM) "))
+            var combustivelNecessario = qtdKm * this.consumo
+
+            if(combustivelNecessario > this.qtdCombustivel){
+                alert("Combustivel insuficiente para percorrer " + qtdKm + "KM!")
+            }
+            else{
+                this.qtdCombustivel = this.qtdCombustivel - combustivelNecessario
+                alert("Você percorreu" + qtdKm + "Combustivel restante: " + this.qtdCombustivel + "L")
+            }
+        },
+
+        consultarCombustivel(){
+            alert("Modelo: " + this.modelo + "Combustivel no tanque: " + this.qtdCombustivel + "L")
+        }
+    }
+
+    veiculo.solicitarDados()
+    veiculo.abastecer()
+    veiculo.dirigir()
+    veiculo.consultarCombustivel()
+    </script>
+    
+</body>
+</html>

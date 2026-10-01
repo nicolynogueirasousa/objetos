@@ -1,0 +1,57 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // Criar objeto
+        // STR coloca aspas, NUM não coloca aspas
+        var carro = {
+            marca: "Chevrolet",
+            modelo: "Celta",
+            ano: 2020,
+            gasolina: 100,
+            portas: 2,
+            acelerar(){
+                alert("Vrummmm")
+                // chamar item dentro do objeto
+                this.gasolina = this.gasolina - 1
+            },
+            verGasolina(){
+                alert(this.gasolina)
+            },
+            abastecer(valor){
+                alert("O carro abasteceu")
+                this.gasolina = this.gasolina + valor
+            }
+        }
+
+        carro.acelerar()
+        carro.acelerar()
+        carro.acelerar()
+        carro.verGasolina()
+        carro.abastecer(3)
+        carro.verGasolina()
+
+        // exibir
+        alert(carro.marca)
+        alert(carro["modelo"])
+
+
+        // adicionar item ao objeto
+        carro.cor = "azul"
+
+        // Deletar item do objeto
+        delete carro.ano
+
+        // Alterar Item
+        carro.portas = 4
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

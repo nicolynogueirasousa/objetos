@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>att 1</title>
+</head>
+<body>
+    <script>
+//         1. Aluno
+// Crie um objeto que represente um aluno, contendo nome, duas notas e média.
+//  Adicione métodos para solicitar os dados, calcular a média e informar se o
+//   aluno foi aprovado ou reprovado. Considere média mínima 6.
+
+    var alunos = {
+        nome: "",
+        nota1: 0,
+        nota2: 0, 
+        media: 0,
+        alunosAprovados: [],
+
+        solicitaDados(){
+            this.nome = prompt("Digite o seu nome: ")
+            this.nota1 = Number(prompt("Digite sua primeira nota: "))
+            this.nota2 = Number(prompt("Digite a sua segunda nota: "))  
+        },
+
+        calculo(){
+            soma = this.nota1 + this.nota2
+            this.media = soma / 2
+
+            if(this.media >=6){
+                alunosAprovados.push(this.media)
+                alert("Aluno aprovado")
+            }
+        }
+    }
+
+    alert(alunos.nome())
+    alert(alunos.nota1())
+    alert(alunos.nota2())
+    alert(alunos.media())
+
+    </script>
+    
+</body>
+</html>

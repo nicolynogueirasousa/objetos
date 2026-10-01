@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>att 10</title>
+</head>
+<body>
+    <script>
+//         9. Controle de Estoque
+// Crie um objeto contendo nome do produto, quantidade disponível e preço unitário.
+//  Adicione métodos para adicionar produtos ao estoque, realizar uma venda e exibir os dados do estoque.
+//   Uma venda não pode ser realizada quando a quantidade solicitada for maior que a disponível.
+
+    var estoque = {
+        nomeProduto: "",
+        quantidade: 0,
+        precoUnidade: 0,
+
+        solicitarDados(){
+            this.nomeProduto = prompt("Digite o nome do produto: ")
+            this.quantidade = Number(prompt("Digite a quantidade em estoque: "))
+            this.precoUnidade = Number(prompt("Digite o preço da unidade: "))
+        },
+
+        adicionar(){
+            var qtdProdutos = Number(prompt("Digite a quantidade de produtos em estoque: "))
+            this.quantidade = this.quantidade + qtdProdutos
+            alert("A nova quantidade de produto em estoque é de: " + qtdProdutos)
+        },
+
+        realizarVenda(){
+            var qtdVenda = Number(prompt("Digite a quantidade que deseja vender: "))
+            if(qtdVenda > this.quantidade){
+                alert("A venda não pode ser realizada!")
+            } else {
+                this.quantidade = this.quantidade - qtdVenda
+                var valorTotal = qtdVenda * this.precoUnidade
+                alert("A venda foi de: " + this.nomeProduto + "O preço foi de: " + this.valorTotal)
+            }
+        },
+
+        dadosEstoque(){
+            alert("---- DADOS EM ESTOQUE ----" + "Produto: " + this.nomeProduto + "Quantidade em estoque: " + this.quantidade + "Preço unidade: " + this.precoUnidade)
+        }
+    }
+
+    estoque.solicitarDados()
+    estoque.dadosEstoque()
+    estoque.adicionar()
+    estoque.realizarVenda()
+    estoque.dadosEstoque()
+    </script>
+    
+</body>
+</html>

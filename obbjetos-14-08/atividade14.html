@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 14</title>
+    <script>
+        var hospital = {
+            atendimentos: [
+                { nome: "Rex", especie: "Cão", responsavel: "João", urgencia: 3, situacao: "Aguardando" },
+                { nome: "Mia", especie: "Gato", responsavel: "Ana", urgencia: 5, situacao: "Aguardando" }
+            ],
+
+            cadastrarAtendimento() {
+                var nome = prompt("Nome do animal:")
+                var especie = prompt("Espécie:")
+                var responsavel = prompt("Nome do responsável:")
+                var urgencia = Number(prompt("Nível de urgência (1 a 5):"))
+
+                this.atendimentos.push({
+                    nome: nome,
+                    especie: especie,
+                    responsavel: responsavel,
+                    urgencia: urgencia,
+                    situacao: "Aguardando"
+                })
+                alert("Atendimento cadastrado com sucesso!")
+            },
+
+            finalizarAtendimento() {
+                var busca = prompt("Nome do animal para finalizar atendimento:")
+
+                if (this.atendimentos[0].nome == busca) {
+                    this.atendimentos[0].situacao = "Finalizado"
+                    alert("Atendimento de " + busca + " foi finalizado!")
+                } else if (this.atendimentos[1].nome == busca) {
+                    this.atendimentos[1].situacao = "Finalizado"
+                    alert("Atendimento de " + busca + " foi finalizado!")
+                } else {
+                    alert("Animal não encontrado!")
+                }
+            },
+
+            buscarAnimal() {
+                var busca = prompt("Nome do animal para buscar:")
+
+                if (this.atendimentos[0].nome == busca) {
+                    alert(
+                        "--- FICHA DO ANIMAL ---\n" +
+                        "Nome: " + this.atendimentos[0].nome + "\n" +
+                        "Espécie: " + this.atendimentos[0].especie + "\n" +
+                        "Responsável: " + this.atendimentos[0].responsavel + "\n" +
+                        "Urgência: " + this.atendimentos[0].urgencia + "\n" +
+                        "Situação: " + this.atendimentos[0].situacao
+                    )
+                } else if (this.atendimentos[1].nome == busca) {
+                    alert(
+                        "--- FICHA DO ANIMAL ---\n" +
+                        "Nome: " + this.atendimentos[1].nome + "\n" +
+                        "Espécie: " + this.atendimentos[1].especie + "\n" +
+                        "Responsável: " + this.atendimentos[1].responsavel + "\n" +
+                        "Urgência: " + this.atendimentos[1].urgencia + "\n" +
+                        "Situação: " + this.atendimentos[1].situacao
+                    )
+                } else {
+                    alert("Animal não encontrado!")
+                }
+            },
+
+            mostrarPorUrgencia() {
+                var nivel = Number(prompt("Digite o nível de urgência para filtrar (1 a 5):"))
+
+                if (this.atendimentos[0].urgencia == nivel) {
+                    alert("Paciente com urgência " + nivel + ": " + this.atendimentos[0].nome)
+                } else if (this.atendimentos[1].urgencia == nivel) {
+                    alert("Paciente com urgência " + nivel + ": " + this.atendimentos[1].nome)
+                } else {
+                    alert("Nenhum animal cadastrado com esse nível de urgência.")
+                }
+            }
+        }
+
+        hospital.cadastrarAtendimento()
+        hospital.buscarAnimal()
+        hospital.mostrarPorUrgencia()
+        hospital.finalizarAtendimento()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

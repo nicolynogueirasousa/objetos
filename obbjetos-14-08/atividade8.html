@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>att 8</title>
+</head>
+<body>
+    <script>
+//         8. Jogo de Personagem
+//  Crie um objeto contendo nome, quantidade de vida e força de ataque.
+//  Adicione métodos para atacar, receber dano e mostrar o estado atual do personagem. 
+//  A vida do personagem não pode ficar abaixo de zero.
+
+    var personagem = {
+        nome: "",
+        vida: 0,
+        forca: 0,
+
+        solicitarDados(){
+            this.nome = prompt("Digite o seu nome: ")
+            this.vida = Number(prompt("Digite a quantidade de vida: "))
+            this.forca = Number(prompt("Digite a força do ataque: "))
+        },
+
+        atacar(){
+            var inimigo = prompt("Quem você quer atacar: ")
+            alert(this.nome + "atacou" + inimigo + "causando" + this.forca + "de danos")
+        },
+
+        receber(){
+            var dano = Number(prompt("Digite a quantidade de danos que o personagem recebeu: "))
+            this.vida = this.vida - dano
+            if(this.vida < 0){
+                this.vida = 0 
+            }
+            alert(this.nome + "recebeu" + dano + "de dano." + "Vida atual: " + this.vida )
+        },
+
+        mostrarEstado(){
+            alert("Nome: " + this.nome + "Vida: " + this.vida + "Força: " + this.forca)
+        }
+    }
+
+    personagem.solicitarDados()
+    personagem.mostrarEstado()
+    personagem.atacar()
+    personagem.receber()
+    personagem.mostrarEstado()
+    
+    </script>
+    
+</body>
+</html>

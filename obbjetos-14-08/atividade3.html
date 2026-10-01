@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>att3</title>
+</head>
+<body>
+    <script>
+//         3. Conta Bancária
+// Crie um objeto contendo o nome do titular e o saldo da conta. 
+// Adicione métodos para depositar, sacar e consultar o saldo.
+//  O saque não deve ser realizado quando o valor for maior que o saldo disponível.
+     var banco = {
+        nome: "",
+        saldo: 0,
+
+        depositar(){
+            this.saldo = Number(prompt("Digite o valor: "))
+            alert("O seu saldo agor é: " + this.saldo)
+        },
+
+        sacar(){
+            valor = Number(prompt("Digite o valor que deseja sacar: "))
+            valor_final = this.saldo - valor
+            alert("O seu saldo após o saque agora é: " + valor_final)
+
+        },
+
+        consultar(){
+            alert("O seu saldo atual é: " + valor_final)
+        }
+     }
+
+     banco.depositar()
+     banco.sacar()
+     banco.consultar()
+    </script>
+    
+</body>
+</html>

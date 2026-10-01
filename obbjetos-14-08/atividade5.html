@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>att5</title>
+</head>
+<body>
+    <script>
+//         5. Funcionário
+// Crie um objeto contendo nome, salário e porcentagem de aumento.
+//  Adicione métodos para solicitar os dados, calcular o aumento salarial e exibir o novo salário.
+
+    var funcionario = {
+        nome: "",
+        salario: 0,
+        aumento: 0,
+
+        solicitarDados(){
+            this.nome = prompt("Digite o seu nome: ")
+            this.salario = Number(prompt("Digite o seu salario: "))
+            this.aumento = Number(prompt("Digite a porcentagem do seu salário: "))
+        },
+
+        calcular(){
+            var porcentagem = this.aumento / 100
+            var novoSalario = this.salario + (this.salario * porcentagem)
+            alert("Meu novo salário é: " + novoSalario)
+        }
+    }
+
+    funcionario.solicitarDados()
+    funcionario.calcular()
+    </script>
+    
+</body>
+</html>
